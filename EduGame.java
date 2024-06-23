@@ -97,12 +97,12 @@ public class EduGame extends JFrame implements KeyListener {
         qAnswer = "";
         //Imports all the image files into memory amd assigns them to a variable
         try {
-            hex = ImageIO.read(new File("C:\\Users\\shafe\\IdeaProjects\\FinalGroupProjectShaferCarlosCaoYang\\out\\production\\FinalGroupProjectShaferCarlosCaoYang\\hexagon.png"));
-            oct = ImageIO.read(new File("C:\\Users\\shafe\\IdeaProjects\\FinalGroupProjectShaferCarlosCaoYang\\out\\production\\FinalGroupProjectShaferCarlosCaoYang\\octagon.png"));
-            pnt = ImageIO.read(new File("C:\\Users\\shafe\\IdeaProjects\\FinalGroupProjectShaferCarlosCaoYang\\out\\production\\FinalGroupProjectShaferCarlosCaoYang\\pentagon.png"));
-            squ = ImageIO.read(new File("C:\\Users\\shafe\\IdeaProjects\\FinalGroupProjectShaferCarlosCaoYang\\out\\production\\FinalGroupProjectShaferCarlosCaoYang\\square.png"));
-            tri = ImageIO.read(new File("C:\\Users\\shafe\\IdeaProjects\\FinalGroupProjectShaferCarlosCaoYang\\out\\production\\FinalGroupProjectShaferCarlosCaoYang\\triangle.png"));
-            hep = ImageIO.read(new File("C:\\Users\\shafe\\IdeaProjects\\FinalGroupProjectShaferCarlosCaoYang\\out\\production\\FinalGroupProjectShaferCarlosCaoYang\\heptagon.png"));
+            hex = ImageIO.read(new File("hexagon.png"));
+            oct = ImageIO.read(new File("octagon.png"));
+            pnt = ImageIO.read(new File("pentagon.png"));
+            squ = ImageIO.read(new File("square.png"));
+            tri = ImageIO.read(new File("triangle.png"));
+            hep = ImageIO.read(new File("heptagon.png"));
 
 
         } catch (IOException ex) {
@@ -124,6 +124,7 @@ public class EduGame extends JFrame implements KeyListener {
         }
         if (questionNum > 10) {
             isGameOver = true; //final score label
+            repaint();
             questionNumLabel.setText("Your Grade is: " + score + " Out Of Ten");
         }
 
@@ -171,7 +172,7 @@ public class EduGame extends JFrame implements KeyListener {
             g.setFont(new Font("Arial", Font.BOLD, 24));
             g.drawString("A.Triangle", QAX, QAY);
             g.drawString("B.Square", QBX, QBY);
-            g.drawString("C,Octagon", QCX, QCY);
+            g.drawString("C.Octagon", QCX, QCY);
             g.drawString("D.Hexagon", QDX, QDY);
 
         } else if (Q == 2) {
